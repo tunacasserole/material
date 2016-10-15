@@ -4,11 +4,11 @@
 A rails 5, devise infused, material themed, redis ready, multi-tenanted, admin style, starter app
 
 # Steps to Create
-rails new app material --database=mysql
-add devise gem to gemfile
-bundle
-cd material
-rails g devise:install
+*rails new app material --database=mysql
+*add devise gem to gemfile
+*bundle
+*cd material
+*rails g devise:install
 
 
 
