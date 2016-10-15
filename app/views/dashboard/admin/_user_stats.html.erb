@@ -1,0 +1,87 @@
+<script>
+  function showByWeek() {
+    $('#week_btn').addClass('btn-primary');
+    $('#month_btn').removeClass('btn-primary');
+    $('.by_week').fadeIn();
+    $('.by_month').hide();
+  }
+  function showByMonth() {
+    $('#month_btn').addClass('btn-primary');
+    $('#week_btn').removeClass('btn-primary');
+    $('.by_month').fadeIn();
+    $('.by_week').hide();
+  }
+</script>
+
+<div class="mini-charts">
+  <div class="row well">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+         <h3>Users</h2>
+         </div>
+         <div class="col-xs-6 m-t-10 text-right">
+           <div class="btn-group">
+            <a class="btn btn-primary" id="week_btn" href="#" onclick="showByWeek()">by week</a>
+            <a class="btn" id="month_btn" href="#" onclick="showByMonth()">by month</a>
+          </div>
+        </div>
+        <br><br>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="mini-charts-item" data-ma-theme="blue">
+          <div class="clearfix">
+            <div class="count">
+              <medium>Total</medium>
+              <h2><%#= Tenant.current.total_users %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="mini-charts-item" data-ma-theme="green">
+          <div class="clearfix">
+            <div class="count by_week">
+              <medium>New this Week</medium>
+              <h2><%#= Tenant.current.new_users_this('week') %></h2>
+            </div>
+            <div class="count by_month" style="display: none">
+              <medium>New this Month</medium>
+              <h2><%#= Tenant.current.new_users_this('month') %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="mini-charts-item" data-ma-theme="green">
+          <div class="clearfix">
+            <div class="count by_week">
+              <medium>Last Week</medium>
+              <h2><%#= Tenant.current.new_users_last('week') %></h2>
+            </div>
+            <div class="count by_month" style="display: none">
+              <medium>Last Month</medium>
+              <h2><%#= Tenant.current.new_users_last('month') %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="mini-charts-item" data-ma-theme="green">
+          <div class="clearfix">
+            <div class="count by_week">
+              <medium>2 Weeks Ago</medium>
+              <h2><%#= Tenant.current.new_users_last('week', 2) %></h2>
+            </div>
+            <div class="count by_month" style="display: none">
+              <medium>2 Months Ago</medium>
+              <h2><%#= Tenant.current.new_users_last('month', 2) %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
