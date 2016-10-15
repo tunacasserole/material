@@ -1,0 +1,108 @@
+<br>
+<h4 class="m-b-15">Action Step Counts by Strategy <small><br>At-a-glance view of completed action step counts by strategy.</small></h4>
+
+<style>
+  .mini-charts-item {
+    margin-bottom: 10px;
+  }
+
+  .mini-charts-item .count > h2 {
+    font-size: 24px;
+    line-height: 24px;
+    padding-bottom: 6px;
+  }
+  .mini-charts-item .count > small {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .chart i {
+    font-size: 32px; color: #fff; padding: 0 10px;
+  }
+
+  .mini-charts-item:before {
+    -webkit-transition: width;
+    -o-transition: width;
+    transition: width;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    content: "";
+    width: 84px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .level-pct {
+    background: rgba(0,0,0,0.15);
+    color: #fff;
+    border-radius: 4px;
+    padding: 1px 5px;
+    margin-left: 5px;
+  }
+</style>
+
+  <div class="mini-charts-item bgm-green">
+    <div class="clearfix">
+      <div class="chart">
+        <i class="icons icon-i-diet" style=""></i>
+      </div>
+      <div class="count">
+        <small>DIET <span class="level-pct pull-right"><%= Tenant.current.steps_by_strategy('diet') %>%</span></small>
+        <h2><%= strategy_level_label(@survey.diet_level) %></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="mini-charts-item bgm-cyan">
+    <div class="clearfix">
+      <div class="chart">
+        <i class="icons icon-i-move"></i>
+      </div>
+      <div class="count">
+        <small>MOVEMENT <span class="level-pct pull-right"><%= Tenant.current.steps_by_strategy('movement') %>%</span></small>
+        <h2><%= strategy_level_label(@survey.movement_level) %></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="mini-charts-item bgm-orange">
+    <div class="clearfix">
+      <div class="chart">
+        <i class="icons icon-i-enviro"></i>
+      </div>
+      <div class="count">
+        <small>ENVIRONMENT <span class="level-pct pull-right"><%= Tenant.current.steps_by_strategy('environment') %>%</span></small>
+        <h2><%= strategy_level_label(@survey.environment_level) %></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="mini-charts-item bgm-amber">
+    <div class="clearfix">
+      <div class="chart">
+        <i class="icons icon-i-rejuv"></i>
+      </div>
+      <div class="count">
+        <small>REJUVENATION <span class="level-pct pull-right"><%= Tenant.current.steps_by_strategy('rejuvenation') %>%</span></small>
+        <h2><%= strategy_level_label(@survey.rejuvenation_level) %></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="mini-charts-item bgm-red m-b-30">
+    <div class="clearfix">
+      <div class="chart">
+        <i class="icons icon-i-spirit"></i>
+      </div>
+      <div class="count">
+        <small>SPIRIT <span class="level-pct pull-right"><%= Tenant.current.steps_by_strategy('spirit') %>%</span></small>
+        <h2><%= strategy_level_label(@survey.spirit_level) %></h2>
+      </div>
+    </div>
+  </div>

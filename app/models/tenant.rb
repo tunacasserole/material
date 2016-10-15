@@ -97,7 +97,7 @@ class Tenant < ActiveRecord::Base
     end
 
     def total_users
-      # self.users.thrivers.count
+
     end
 
     private
