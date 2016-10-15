@@ -51,4 +51,4 @@ production:
   <<: *default
   database: material_production
   username: material
-  password: <%= ENV['MATERIAL_DATABASE_PASSWORD'] %>
+  password: <%= ENV['material_DATABASE_PASSWORD'] %>
